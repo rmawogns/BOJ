@@ -5,8 +5,7 @@ for i in range(n):
     [a, b] = map(int, input().split()) 
     num.append([a, b]) 
 
-num = sorted(num)
+num.sort()
 
 for i in range(n): 
     print(num[i][0], num[i][1])
-
