@@ -1,21 +1,23 @@
-import sys
 from collections import Counter
-n = int(sys.stdin.readline())
-nums = []
+n = int(input())
+data = []
 
 for i in range(n):
-    nums.append(int(sys.stdin.readline()))
-nums.sort()
-nums_s = Counter(nums).most_common()
+    num = int(input())
+    data.append(num)
 
-print(round(sum(nums) / n))
-print(nums[n // 2])
+data.sort()
+data_counter = Counter(data).most_common()
 
-if len(nums_s) > 1:
-    if nums_s[0][1] == nums_s[1][1]:
-        print(nums_s[1][0])
+print(round(sum(data) / n))     # 산술평균
+print(data[n // 2])             # 중앙값
+
+if len(data_counter) > 1:
+    if data_counter[0][1] == data_counter[1][1]:
+        print(data_counter[1][0])
     else:
-        print(nums_s[0][0])
+        print(data_counter[0][0])
 else:
-    print(nums_s[0][0])
-print(nums[-1] - nums[0])
+    print(data_counter[0][0])   # 최빈값
+
+print(data[-1] - data[0])       # 범위
