@@ -1,12 +1,12 @@
 n = int(input())
-a = []
+num = []
 
 for i in range(n):
     [x, y] = map(int, input().split())
     rev = [y, x]
-    a.append(rev)
+    num.append(rev)
 
-b = sorted(a)
+num.sort()
 
 for i in range(n):
-    print(b[i][1], b[i][0])
+    print(num[i][1], num[i][0])
